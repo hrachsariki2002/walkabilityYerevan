@@ -355,24 +355,3 @@ clean_data <- read.csv("clean_data.csv")
 clean_data <- clean_data[,-1]
 
 clean_data$points <- 10
-
-
-
-
-
-register_google(key = "AIzaSyAgZOeeQEwe6ipaBMa2hKUOMeSn1vZkBek")
-
-
-yerevan <- get_map(location = 'yerevan', zoom = 11, maptype = "terrain-lines")
-
-
-pointed_yerevan <- ggmap(yerevan) +
-  geom_point(data = citypoints, aes(lon, lat, color = TYPE))
-
-
-interactive_map <- ggplotly(pointed_yerevan)
-
-
-print(interactive_map)
-
-
